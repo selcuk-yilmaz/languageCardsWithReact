@@ -1,13 +1,20 @@
 import { useState } from "react";
 import "./Item.css";
-
 const Item = ({ card }) => {
   const [showLogo, setShowLogo] = useState(true);
-
   const { name, img, options } = card;
 
+    const def = () => {
+      setShowLogo(!showLogo);
+      setTimeout(abc, 3000);
+    };
+    const abc = () => {
+      setShowLogo(true);
+      // console.log(showLogo);
+    };
+
   return (
-    <div className="card" onClick={() => setShowLogo(!showLogo)}>
+    <div className="card" onClick={def}>
       {showLogo ? (
         <div>
           <img className="card-logo" src={img} alt="" />
